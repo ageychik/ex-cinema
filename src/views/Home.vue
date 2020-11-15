@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Slider :popular="popular" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import server from "@/assets/libs/server";
+
+// Components
+import Slider from "@/components/Slider";
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  data(){
+    return {
+      hello: 'Hello world',
+      popular: []
+    }
+  },
+  created() {
+    server('popular').then(data => {
+      this.popular = data.results.slice(0, 5);
+    })
+  },
+  mounted() {
+    console.log(1);
+    this.hello = 'Hello Roma'
+  },
+  beforeUpdate() {
+    // console.log(2);
+  },
+  updated() {
+    // console.log(3);
+  },
+  components: { Slider }
 }
 </script>
