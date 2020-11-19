@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/assets/styles/main";
 
   .slider{
     position: relative;
