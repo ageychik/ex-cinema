@@ -1,3 +1,12 @@
 // Colors
 $white: #fee;
 $black: #333;
+
+
+// Sizes
+$xs: 576;
+$mobile: $xs + px;
+$md: 768;
+$tablet: $md + px;
+$lg: 960;
+$desktop: $lg + px;
